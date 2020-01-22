@@ -20,5 +20,5 @@ HTTP requests include get, post, delete, or put. I use the "get" type most often
 <b>What is the JavaScript console?</b>The console is the JavaScript programming that controls how things work. Using the console you can change how the programming on a website functions. This is how we were able to alter the online-game Floppy Bird to make it easier (even cheating I couldn't get past a score of 2, though) by changing gravity and other aspects of the game.
 
 <b>Code exercises (5 pts each)</b><br>
-<b>Using the network inspector and Postman, make a standalone request for a single map tile. Open an issue in your forked repo describing how you formulated your tile request and include the final URL.</b> <a href="http://geojson.io/#map=14/46.1610/-123.9357">Link to tile</a> and <a href="">link to issue</a>.<br>
+<b>Using the network inspector and Postman, make a standalone request for a single map tile. Open an issue in your forked repo describing how you formulated your tile request and include the final URL.</b> <a href="http://geojson.io/#map=14/46.1610/-123.9357">Link to tile</a> and <a href="https://github.com/LeleaLingo/web-mapping-curriculum/issues/2">link to issue</a>.<br>
 <b>Successfully commit your writing prompts to your forked repo.</b> Done!  
