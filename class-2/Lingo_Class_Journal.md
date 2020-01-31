@@ -21,6 +21,5 @@ The basemap-overlay paradigm is a basemap made of tiles with data layers display
 One of the MapBox user interactions is 'Disable map rotation'. This locks the map in 'North Up' and can be used if having geographical awareness of the area being displayed is especially important. For example, if a map you are building does not have roads or other cues to help the user keep awareness of the map orientation (i.e. maping things offshore or in a forest or desert), you can lock the rotation so it is always oriented the same way. Another handy interaction is 'Filter symbols by text input' which allows the user to search a layer of data with a textbox. This is helpful if there is alot of information in a layer, and the user can apply the filter to only see the information applicable to what they are interested in. 
 <br>
 <h1>Exercises</h1>
-<br>
 <a href="https://api.mapbox.com/styles/v1/lelealingo/ck61hzdhi04zl1inusko7lt6k.html?fresh=true&title=view&access_token=pk.eyJ1IjoibGVsZWFsaW5nbyIsImEiOiJjazU3YjhmeWIwYzFmM3BwNzRtZncxZ2hyIn0.rNu-6Hs3U5-C1B1kL7YRJw"> Check out my cool Choropleth! </a>
 <br>
