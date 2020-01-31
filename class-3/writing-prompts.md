@@ -1,5 +1,5 @@
-<H1> Writing Prompts
-<H2>Intro to interactivity
+<H1> Writing Prompts </h1>
+<H2>Intro to interactivity</h2>
 
 <b>What are some strategies interactive map developers can use to ensure maps with a lot of interactions are not overwhelming?</b>
 
