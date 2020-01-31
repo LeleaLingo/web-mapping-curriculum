@@ -7,14 +7,19 @@
 <b>Why do we use the term “map user” instead of “map reader?”</b>
 
 <br>
-<b>Common types of interaction</b>
+<h2>Common types of interaction</h2>
+<b>What is geocoding and how might you add it to an interactive map? </b>
 
-What is geocoding and how might you add it to an interactive map?
-Intro to events
+<br>
+<h2>Intro to events</h2>
+<b>What is an event? </b>
 
-What is an event?
-Describe an example of how you could use an event listener with an interactive map.
-Code exercises to do on your own (10 points):
+<br>
+<b>Describe an example of how you could use an event listener with an interactive map.</b>
+
+<h1>Code exercises to do on your own</h1>
+Fly-to.hmtl is updated!
+
 Starting from your marker-and-popup map, add a button that, when clicked, causes the map to fly to Walla Walla, Washington. To turn this assignment in, commit a new file called "fly-to.html" to the "class 3" folder in your personal class repo.
 Hint
 Create popups that include information about the clicked feature. Starting from this starter file, attempt to address each of the [Prompt] comments, including any sub-prompts that follow. Once you have made your edits, save your changes and commit the file to your personal class repo. This will be a challenging exercise and we don't expect everyone to build a completely working map. For any prompts you get stuck on, you can still get full credit by including, at a minimum:
