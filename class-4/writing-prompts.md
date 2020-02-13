@@ -20,3 +20,6 @@ It pulls the information for the district number that relates to the spot where 
 <br>
 <b>Looking at the callback to map.on('click',...), what is e and why do we need it?</b>
 In map.on, e is the variable assigned to the click event. We need it because it defines the event and allows future script to do what we want it to do when the click happens.
+<br>
+<h2>Coding</h2>
+<a href="https://api.mapbox.com/styles/v1/lelealingo/ck6l7ufaq2ino1iped5sd94lg.html?fresh=true&title=view&access_token=pk.eyJ1IjoibGVsZWFsaW5nbyIsImEiOiJjazU3YjhmeWIwYzFmM3BwNzRtZncxZ2hyIn0.rNu-6Hs3U5-C1B1kL7YRJw">Check out my home!</a>
