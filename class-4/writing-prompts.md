@@ -13,7 +13,7 @@ Mapbox GL JS (and other similar systems) is client rendered, meaning that the us
 <br>
 <h2>Jurisdiction finder recap For the following 3 prompts, reference the working file and README.md in the jurisdiction finder explanation folder in the main class repo. </h2>
 <b>Describe how feature gets to the makeFeatureLabel() function.</b>
-
+'Feature' just codes for the fact a function is about to be defined, while makeFeatureLabel() is the coder-defined function along with the information on what it should do!
 <br>
 <b>What does the getDistrictNumber() function do?</b>
 It pulls the information for the district number that relates to the spot where the event (the click) happened. 
