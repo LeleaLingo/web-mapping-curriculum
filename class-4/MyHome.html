@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Add Mapbox GL JS JavaScript file -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <!-- Add in the Mapbox GL JS CSS file -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Add styling info for the map -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #mapId {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Container for the map -->
+    <div id="mapId"></div>
+    <script>
+        // Mapbox GL JS requires a token
+        mapboxgl.accessToken = "pk.eyJ1IjoibGVsZWFsaW5nbyIsImEiOiJjazU3YjhmeWIwYzFmM3BwNzRtZncxZ2hyIn0.rNu-6Hs3U5-C1B1kL7YRJw"
+        /* Initialize the map with:
+         *  container
+         *  style
+         *  center
+         *  zoom
+         */
+         var map = new mapboxgl.Map({
+             container: "mapId",
+             style: "mapbox://styles/mapbox/streets-v11",
+             center: [-134.57611978054047,
+              58.39967944187508],
+             zoom: 14
+
+         });    
+
+         map.on('load',function() {
+             map.addSource('route', {
+                 "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -134.57611978054047,
+              58.39967944187508
+            ],
+            [
+              -134.57587838172913,
+              58.39968787458907
+            ],
+            [
+              -134.57586228847504,
+              58.399600736447084
+            ],
+            [
+              -134.57611709833145,
+              58.399588087344064
+            ],
+            [
+              -134.57613587379456,
+              58.39967803642255
+            ]
+          ]
+        }
+      }
+    ]
+  })}
+         </script>
+
+
+
+</body>
+
+</html>
