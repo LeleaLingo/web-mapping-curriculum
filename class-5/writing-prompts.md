@@ -13,7 +13,7 @@ A function is an action. You would create a function instead of just running an 
 Classes start with . and ids start with #. IDs are used to label an element where as a class can be used for various elements.
 <br>
 <b>In HTML, does the order of elements matter? Why? </b>
-No, because the HTML is just providing the overall stucture for the website. Order matters in the CSS.
+The order does matter, because it controls the order items are loaded on the page.
 <br>
 <b>When might you need to use an array? How about an object?</b>
 An array can store multiple pieces of data (for example, a list). Objects can be controlled individually to produce the user-end result you would like. Using an object isolates the programming to that specific object and is not applied to other objects (unless you want it to).
