@@ -11,7 +11,7 @@ Most commonly, you would want to do data prep in GIS with data that you intend t
 <b>What are some data characteristics that can impact rendering speed? How might you address these issues?</b>
 Rendering speed is greatly impacted by the amount of information needing to be processed on the user end. Vector tiles already containing static data can help to reduce the amount of information that the user's computer needs to render and speeds up rendering for dynamic data.
 <br>
-<b>What is turf.js? Give an example of how you could apply a turf operation to a web map.</b
+<b>What is turf.js? Give an example of how you could apply a turf operation to a web map.</b>
 Turf.js is a geojson compatible geospatial analysis system which allows for various types of user analysis. An example of the turf operation is to measure a distance on the map (related to the MapMyRun answer above).
 <br>
 <h2>Inline writing prompts</h2>
