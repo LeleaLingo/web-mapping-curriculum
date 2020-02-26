@@ -16,7 +16,7 @@ Turf.js is a geojson compatible geospatial analysis system which allows for vari
 <br>
 <h2>Inline writing prompts</h2>
 <b>Describe where the centroids variable comes from. How is it possible for you to reference this variable when you didn't declare it?</b>
-
+The centroids variable comes from the centroids.js JavaScript file I created in the same folder as the homework file. I am able to reference it because I linked it to my webpage as a source in the HTML head.
 <br>
 <b>Why might you want to create the 'centroids-selected' layer after you've created the 'centroids' layer?</b>
 
