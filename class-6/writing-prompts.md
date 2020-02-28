@@ -25,4 +25,4 @@ The selected centroid can only be executed when a centroid is selected, so you h
 No, you should not, because the marker's lngLat depends on where the user clicks!
 <br>
 <b>How did you know which arguments to pass to the pip() function?</b>
-I didn't.
+If you search pip in the code provided, it is defined lower down in the code and it defines the parameters you need to use.
