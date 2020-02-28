@@ -19,7 +19,7 @@ Turf.js is a geojson compatible geospatial analysis system which allows for vari
 The centroids variable comes from the centroids.js JavaScript file I created in the same folder as the homework file. I am able to reference it because I linked it to my webpage as a source in the HTML head.
 <br>
 <b>Why might you want to create the 'centroids-selected' layer after you've created the 'centroids' layer?</b>
-The selected centroid can only be executed when a centroid is selected, so you have to actually create the centroid layer for the computer to render BEFORE the user can select one (and then trigger the centroids-selected programming).
+You want to be able to see the 'centroids-selected' over TOP of the 'centroids'.
 <br>
 <b>Should you set the marker's lngLat and add it to the map? Why or why not?</b>
 No, you should not, because the marker's lngLat depends on where the user clicks!
