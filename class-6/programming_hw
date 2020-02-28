@@ -55,17 +55,15 @@
         map.addLayer({
             id: 'search-radius',
             source: {
-                type: 'geojson'
+                type: 'geojson',
+                data: {"type": "FeatureCollection", "features": []}
             },
-            type: 'circle',
+            type: 'fill',
             paint: {
-                'circle radius': 3,
-                'circle-color': '#223b53',
-                'circle-stroke-color': 'white',
-                'circle-stroke-width': 1,
-                'circle-opacity': .05
+                'fill-color': '#223b53',
+                'fill-opacity': .05
             }
-        })
+        });
       // 🔰 Use map.addLayer to add your parcel centroids GeoJSON as another layer
         // Give this layer an ID of 'centroids'
         // This layer should also be of type 'geojson', but its data property should be set to the variable centroids. 
@@ -78,7 +76,7 @@
             id: 'centroids',
             source: {
                 type: 'geojson',
-                data: {"type": "FeatureCollection", "features": []}
+                data: centroids
             },
             type: 'circle',
             paint: {
@@ -87,7 +85,7 @@
                 'circle-stroke-width': 1,
                 'circle-opacity': .05
             }
-        })
+        });
       // 🔰 Use map.addLayer to add another empty layer to house the parcel centroids that the user will select. 
       // Creating another layer allows you to style the selected centroids in a way that is distinct form the unselected ones.
         // Give this layer an ID of 'centroids-selected'
@@ -109,12 +107,12 @@
             },
             type: 'circle',
             paint: {
-                'circle-color': '#223b53',
+                'circle-color': 'blue',
                 'circle-stroke-color': 'white',
                 'circle-stroke-width': 1,
                 'circle-opacity': .05
             }
-        })
+        });
     });
 
     //🔰 Create a new marker. Later, when the user clicks on the map, set the marker's location
@@ -124,7 +122,6 @@
      * [📝 PROMPT 3] Should you set the marker's lngLat and add it to the map? Why or why not?
     ***************************/
     var marker = new mapboxgl.Marker()
-    .addTo(map);
     //🔰 Create an event listener that listens for clicks on the map
     map.on('click', function(e) {
       // 🔰 Store the lngLat associated with the click event as a variable called clickedLngLat
@@ -134,22 +131,22 @@
       marker.setLngLat(clickedLngLat).addTo(map);
       //🔰 Create a variable called searchRadius and assign its value to:
         // Call the makeRadius() utility function to generate a 200 meter search radius.
-        var myRadius = makeRadius([clickedLngLat.lng,clickedLngLat.lat], 200);
+        var searchRadius = makeRadius([clickedLngLat.lng,clickedLngLat.lat], 200);
       //🔰 Get the search-radius source. Set its data to the radius created in the previous step.
       // Here is an example you can reference: https://docs.mapbox.com/mapbox-gl-js/api/#geojsonsource
-      map.getSource ('search-radius').setData(myRadius);
+      map.getSource('search-radius').setData(searchRadius);
       //🔰 Create a variable called selectedPoints and assign its value to:
         // Call the pip() utility function with the appropriate arguments.
             /**************************
              * [📝 PROMPT 4] How did you know which arguments to pass to the pip() function?
             ***************************/
-      var selectedPoints = pip(e);
+      var selectedPoints = pip(centroids, searchRadius);
       //🔰 Get the centroids-selected source. Set its data to the selected points created in the previous step.
       map.getSource ('centroids-selected').setData(selectedPoints);
 
       //🔰 Call the buildLocationsList utility function with the appropriate arguments.
-      buildLocationsList(selectedPoints)
-    })
+      buildLocationsList(selectedPoints, 'bulletsContainer');
+    });
 
     /****** UTILITY FUNCTIONS *******/
 
@@ -164,15 +161,15 @@
       //🔰 Create a variable called point and assign its value to:
         // use turf.point() to generate a GeoJSON point from lngLatArray.
         // https://turfjs.org/docs/#point
-        var points = turf.point(lngLatArray);
+        var point = turf.point(lngLatArray);
       
       //🔰 Create a variable called buffered. Assign its value to:
         // Use turf's buffer function to make a polygon that around the clicked point
         // https://turfjs.org/docs/#buffer
-        var buffered = turf.buffer(point, 500, {units: 'miles'});
+        var buffered = turf.buffer(point, radiusInMeters, {units: 'meters'});
 
       //🔰 Return the buffered feature
-      buffered()
+      return buffered
     }
 
     /**
@@ -186,10 +183,10 @@
       //🔰 Create a variable called selectedPoints and set its value to:
         // use turf.pointsWithinPolygon to find the points that fall within a given polygon.
         // https://turfjs.org/docs/#pointsWithinPolygon
-      var selectedPoints = turf.pointsWithinPolygon(points, searchWithin)
+      var selectedPoints = turf.pointsWithinPolygon(pointsFeatureCollection, polygon)
 
       //🔰 Return selectedPoints
-      selectedPoints()
+      return selectedPoints
     }
 
     /**
@@ -200,7 +197,7 @@
     function buildLocationsList(selectedPoints, containerId) {
       //🔰 Use document.getElementById to get the element with the ID passed to this function.
       // Create a variable called container and assign the above to it.
-      document.getElementById()
+      var container = document.getElementById(containerId)
       
       var pointBullets = selectedPoints.features.map(function(point) {
         // Some of the parcel data doesn't have full addresses. 
@@ -216,10 +213,10 @@
       // 🔰 Create a variable called bulletsList.
       // Using the logic in the previous loop as a model, wrap the pointBullets list in an unordered list: https://www.w3schools.com/html/html_lists.asp
       // Hint: you can use join('') to turn the pointBullets array into a single string: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
-      var bulletList = console.log(elements.join());
+      var bulletList = "<ul>" + pointBullets.join('') + "</ul>";
 
       // 🔰 Assign the container's innerHTML to the value of the bulletsList variable you just created. https://www.w3schools.com/jsref/prop_html_innerhtml.asp
-      document.getElementById(bulletList).innerHTML = bulletList;
+      container.innerHTML = bulletList;
     }
 </script>
 
